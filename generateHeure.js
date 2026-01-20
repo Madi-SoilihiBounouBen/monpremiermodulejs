@@ -1,26 +1,23 @@
-/**
- * generateHeure est module qui permet de générer une heure automatiquement
- */
-
-//Je déclare une fonction qui retourne l'heure
+// Je crée une fonction qui récupère l'heure, les minutes et les secondes
 function monHeure() {
-    // Je crée une nouvelle instance de la date actuelle
-    let date = new Date();
-    // J'extrais les heures de la date
-    let heure = date.getHours();
-    // J'extrais les minutes de la date
-    let minute = date.getMinutes();
-    // J'extrais les secondes de la date
-    let seconde = date.getSeconds();
-
-    // J'affiche un message dans la console avec l'heure, les minutes et les secondes
-    console.log("### Coucou, je passe à la télé à ", heure, ":", minute, ":", seconde, "###");
-    
-    // Je retourne un objet contenant les heures, minutes et secondes
-    return { heure, minute, seconde };
+  // Je récupère la date et l'heure actuelles
+  let date = new Date();
+  
+  // Je récupère l'heure
+  let heure = date.getHours();
+  
+  // Je récupère les minutes
+  let minute = date.getMinutes();
+  
+  // Je récupère les secondes
+  let seconde = date.getSeconds();
+  
+  // J'affiche l'heure dans la console pour vérifier
+  console.log("L'heure actuelle est :", heure, ":", minute, ":", seconde);
+  
+  // Je retourne un objet avec les 3 informations
+  return { heure, minute, seconde };
 }
 
-//Exporter ou exposer la fonction monHeure () parce que je veux rendre la fonction acccessible depuis un autre fichier JS
-export default { 
-    monHeure 
-};
+// J'exporte la fonction pour l'utiliser dans d'autres fichiers
+export default { monHeure };

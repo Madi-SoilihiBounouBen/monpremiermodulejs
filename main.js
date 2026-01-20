@@ -1,28 +1,34 @@
-/**
- * Ici, je réunirai tous les modules de mon projet
- */
-
-// J'importe le module depuis le fichier generateHeure.js
+// J'importe la fonction depuis generateHeure.js
 import generateHeure from "./generateHeure.js";
 
-// Je récupère les éléments HTML pour afficher l'heure, minutes et secondes
+// Je récupère les 3 spans dans le HTML pour afficher l'heure
 let heureActuelle = document.querySelector("#heure");
-
-// Je récupère l'élément HTML avec l'id "minutes"
 let minutesActuelle = document.querySelector("#minutes");
-
-// Je récupère l'élément HTML avec l'id "seconde"
 let secondeActuelle = document.querySelector("#seconde");
 
-// J'appelle la fonction monHeure() pour récupérer l'heure, minute et seconde actuelles
+// J'appelle la fonction pour récupérer l'heure
 let temps = generateHeure.monHeure();
 
-// J'affiche chaque valeur dans son span
+// J'affiche l'heure dans les spans
 heureActuelle.textContent = temps.heure + "h ";
-// J'affiche les minutes dans le span "minutes"
 minutesActuelle.textContent = temps.minute + "m ";
-// J'affiche les secondes dans le span "seconde"
 secondeActuelle.textContent = temps.seconde + "s";
 
-// J'affiche un message dans la console avec l'heure complète
-console.log("Main - mon heure : ", `${temps.heure}h ${temps.minute}m ${temps.seconde}s`);
+// J'affiche aussi dans la console
+console.log("Heure complète :", temps.heure + "h " + temps.minute + "m " + temps.seconde + "s");
+
+
+// J'importe l'objet utilisateur depuis user.js
+import utilisateur from "./user.js";
+
+// Je récupère les 4 spans dans le HTML pour afficher les infos
+let nomUtilisateur = document.querySelector("#nomUtilisateur");
+let prenomUtilisateur = document.querySelector("#prenomUtilisateur");
+let emailUtilisateur = document.querySelector("#emailUtilisateur");
+let motDePasseUtilisateur = document.querySelector("#motDePasseUtilisateur");
+
+// J'affiche les informations de l'utilisateur dans les spans
+nomUtilisateur.textContent = utilisateur.nom;
+prenomUtilisateur.textContent = utilisateur.prenom;
+emailUtilisateur.textContent = utilisateur.email;
+motDePasseUtilisateur.textContent = utilisateur.motDePasse;
